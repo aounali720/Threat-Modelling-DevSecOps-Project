@@ -1,28 +1,21 @@
-# Attack 1 Summary: AI Generated External phishing email utilising admin credentials
+# Scenario 1 — Phishing an administrator
 
-## Stages of the Attack
+This is a **hypothetical attack path** from the Solaris Care Connect 360 workshop exercise. It is not a report of an incident or a validated exploit.
 
-### Origins
-The attack is initiated by an attacker leveraging a long history of cyber attack techniques. The attacker identifies the Solari Health 360 application as a target due to its sensitive health data and public-facing nature.
+The attacker's objective is access to the application environment through a privileged user. The stages below are used to decide where controls and monitoring would matter.
 
-### Reconnaissance
-The attacker conducts research to identify vulnerabilities in the Solari Health 360 application. This includes gathering information about the application's architecture, technologies used, and potential weaknesses in its security measures.
+## Attack sequence
 
-### Weaponization
-Exploit payloads are crafted specifically to target vulnerabilities identified in the Solari Health 360 application. Additionally, the attacker creates sophisticated phishing emails tailored to appear legitimate and enticing to users of the application.
+1. **Reconnaissance:** identify staff with administrative access and gather public information about the application.
+2. **Preparation:** draft a phishing message intended to make the recipient disclose credentials or run an attachment.
+3. **Delivery:** send the message to a targeted user.
+4. **Credential compromise:** if the user responds and the credentials are usable, the attacker may obtain a foothold. This step depends on factors such as MFA and device protections.
+5. **Persistence and movement:** the attacker may attempt to retain access and reach systems holding sensitive data, subject to their actual permissions.
+6. **Impact:** possible outcomes include unauthorized access to patient records or service disruption.
 
-### Delivery
-Phishing emails containing malicious links or attachments are sent to users of the Solari Health 360 application. These emails may appear to come from trusted sources or mimic official communication from the application itself, increasing the likelihood of successful exploitation.
+The important questions for the exercise are where MFA, conditional access, monitoring, segmentation and review could interrupt the sequence. A successful compromise is **not assumed** simply because the message was delivered.
 
-### Exploitation
-The attacker exploits vulnerabilities in the Solari Health 360 application, such as SQL injection or cross-site scripting (XSS) vulnerabilities, to gain unauthorized access. By exploiting these vulnerabilities, the attacker can execute arbitrary code or extract sensitive information from the application's database.
-
-### Installation
-Once access is gained, the attacker establishes a foothold within the Solari Health 360 application's infrastructure. This may involve creating backdoor accounts or implanting malware to maintain persistent access to the system.
-
-### Actions on Objectives
-With access to the Solari Health 360 application, the attacker can exfiltrate sensitive health data stored within the application's database. Additionally, the attacker may manipulate patient records, tamper with medical information, or disrupt the application's functionality for malicious purposes.
-
+## Diagram from the training exercise
 
 ```mermaid
 flowchart LR
