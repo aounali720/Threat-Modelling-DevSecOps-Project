@@ -1,39 +1,37 @@
-# Project Summary
+# Threat-modelling workshop exercise
 
-This project is a new and revolutionary approach to Threat Modelling as a template that you can use. I have worked across a plethora of different industries in cyber security for over ten years and I have yet to find a suitable method to run threat modelling. I have therefore created this template for you to use either in your future DevSecOps role or for you to create a project to help you show on your CV/in interviews when asked about threat modelling. 
+This repository contains my notes and diagrams from a DevSecOps training exercise. The case study uses a **fictional healthcare application**, Solaris Care Connect 360, to work through possible attack paths and control gaps.
 
-Threat modelling diagrams/models should also reside within the repos of the projects. This approach ensures teams underestand the threats to the applications and continue to own it.
+The exercise came from a [DevSecOps bootcamp workshop](https://cyberagoge.thinkific.com/courses/take/devsecops-bootcamp/texts/55130887-part-1-introduction-to-the-course). It should not be read as an assessment of a real client system or as a claim that I led a commercial threat-modelling engagement.
 
-To access the code for this repo please visit the following website for the full video and code to create your first threat modelling project: (https://cyberagoge.thinkific.com/courses/take/devsecops-bootcamp/texts/55130887-part-1-introduction-to-the-course) Sigg up and click free preview and visit project 4 for the code and video. 
+## Scenario
 
-Customise all of the below to a chosen application - this can be make believe or a running application you have created for your project as created during the bootcamp or a live, real application for your organisation. If the application is live and real I recommned you keep the repo private.
+The workshop material covers four threats:
 
-# Threat Modelling Workshop Summary
+1. Phishing an administrator for access to the application environment.
+2. Attacking machine processes and the data lake.
+3. SQL injection against a public-facing component.
+4. An insider accessing sensitive algorithms.
 
-## Introduction
-A 3 Hour threat modelling workshop took place to detail the runbook scenario of multiple AI attacks against the web-facing health care application Solaris Care Connect 360.
+The exercises combine STRIDE, MITRE ATT&CK and attack-sequence diagrams to identify missing controls and discuss risk. The source scenario reports four high risks and one medium risk; those are **exercise ratings**, not measured findings from a production environment.
 
-## Attendess
-Care Connect Eng team, Product Managers, DevEx Engineers and the DevSecOps Team.
+## Controls considered
 
-## Scope
-4 Scenarios were run covering: (1) AI Generated External phishing email utilising admin credentials, (2) Attack against Machine Processes and the data lake, (3) SQL Injection attack and (4) Insider attack taking Quant algorithms.
+- MFA and least-privilege access for administrators.
+- Regular patching and application security testing.
+- Phishing awareness and secure credential handling.
+- Restricted network access, logging and event review.
+- Role-based access to sensitive healthcare records.
+- WAF rules as one layer of protection, not a replacement for application fixes.
 
-## Methodology
-All scenarios were run against the cyber attack killchain, utilising the Mitre Att&ack framework and STRIDE for control gap assessments. Culminating in identified risks. 
+## What's in this repo
 
-## Conclusion
-A total of 4 high risks and 1 medium risks were found during the threat modelling workshop.
+- `Application Summary/` — application diagrams and initial risk notes.
+- `Attack Scenario 1/` — phishing scenario, attack flow and STRIDE worksheet.
+- `Attack Scenario 2–4/` — placeholders for the remaining workshop scenarios.
+- `Risks Summary.md` — scenario risk summary.
 
-## Controls Required
-
-- Regular security audits using ASVS specifically targeting the Solaris Health 360 application to detect vulnerabilities and weaknesses in its security measures.
-- Patch management to ensure the Solari Health 360 application and its underlying technologies are up-to-date and protected against known vulnerabilities.
-- Comprehensive employee training on phishing awareness to educate users of the Solaris Health 360 application about the risks of phishing attacks and how to identify and report suspicious emails.
-- Implementation of a Web Application Firewall (WAF) tailored to the Solari Health 360 application's traffic to monitor and filter incoming requests for malicious activity.
-- Deployment of Multi-factor Authentication (MFA) to enhance authentication security and prevent unauthorized access to the Solari Health 360 application.
-- Continuous network traffic monitoring to detect and respond to suspicious activity within the Solari Health 360 application's infrastructure.
-- Implementation of Role-based Access Control (RBAC) within the Solari Health 360 application to limit access to sensitive health data and functionalities based on user roles and permissions.
+These are learning artifacts. Any templates or scenario material drawn from the workshop remain attributable to the course; the notes here should not be reused as a finished assessment without validating the application and assumptions.
 
 # Threat Modelling Process Summary
 
